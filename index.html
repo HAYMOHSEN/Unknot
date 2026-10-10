@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unknot</title>
+<title>Unknot – Stress Relief</title>
+<meta name="application-name" content="Unknot – Stress Relief">
 <meta name="description" content="Evidence-based stress relief: guided breathing, muscle relaxation, worry parking, thought checks and more, with the research behind every technique. Works offline.">
 <meta name="theme-color" content="#ECF1F0">
 <link rel="manifest" href="manifest.json">
@@ -1854,7 +1855,7 @@ function renderView(v, id){
   const fn = {home: vHome, tools: vTools, tool: () => vTool(id), insights: vInsights, journal: vJournal, science: vScience, help: vHelp, settings: vSettings}[v] || vHome;
   $("#view").innerHTML = `<div class="wrap">${fn()}</div>`;
   const titles = {home: "nav.home", tools: "nav.tools", insights: "nav.insights", journal: "nav.journal", science: "nav.science", help: "nav.help", settings: "nav.settings"};
-  document.title = v === "tool" && tool(id) ? `${L(tool(id)).name} · Unknot` : (v === "home" ? "Unknot" : `${t(titles[v])} · Unknot`);
+  document.title = v === "tool" && tool(id) ? `${L(tool(id)).name} · Unknot` : (v === "home" ? "Unknot – Stress Relief" : `${t(titles[v])} · Unknot`);
   after(v);
 }
 function after(v){
@@ -2133,7 +2134,7 @@ function vSettings(){
     ${UI.confirmDel ? `<div class="confirm" style="margin-top:12px"><span style="flex:1 1 240px">${esc(t("se.del.q"))}</span><button class="btn sm danger solid" data-act="del-yes">${esc(t("se.del.yes"))}</button><button class="btn sm" data-act="del-no">${esc(t("gen.cancel"))}</button></div>` : ""}
   </section>
   <section class="card set-group"><h2 class="h3">${esc(t("se.about"))}</h2>
-    <div class="set-row"><div><b>Unknot</b><span class="muted">${esc(t("se.version", {v: VERSION}))} · ${esc(t("se.by"))}</span></div><a class="btn sm" href="https://getjotech.com" target="_blank" rel="noopener">${esc(t("se.more"))} ${ic("ext", "s")}</a></div>
+    <div class="set-row"><div><b>Unknot – Stress Relief</b><span class="muted">${esc(t("se.version", {v: VERSION}))} · ${esc(t("se.by"))}</span></div><a class="btn sm" href="https://getjotech.com" target="_blank" rel="noopener">${esc(t("se.more"))} ${ic("ext", "s")}</a></div>
     <div class="set-row"><div><b>${esc(t("se.contact"))}</b><span class="muted" dir="ltr" style="user-select:all">haymohsen@gmail.com</span></div><a class="btn sm" href="https://haymohsen.github.io/Unknot/privacy.html" target="_blank" rel="noopener">${esc(t("se.privacy"))} ${ic("ext", "s")}</a></div>
     <div class="set-row"><div><b>${esc(t("se.keys"))}</b><span class="muted"><span class="kbd">Space</span> ${esc(t("se.keys.space"))} · <span class="kbd">Esc</span> ${esc(t("se.keys.esc"))} · <span class="kbd">S</span> ${esc(t("se.keys.s"))} · <span class="kbd">1–4</span> ${esc(t("se.keys.nav"))}</span></div></div>
   </section>`;
